@@ -16,7 +16,7 @@ const TaskFormModal = ({ onClose, onAddTask, onUpdateTask, taskToEdit }) => {
       setImportant(taskToEdit.important || false);
     }
   }, [taskToEdit]);
-
+ 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (title.trim()) {
