@@ -26,7 +26,7 @@ function MyApp({ Component, pageProps }) {
     }
   }, []);
 
-  
+
   useEffect(() => {
     try {
       localStorage.setItem('taskTrackerTasks', JSON.stringify(tasks));
@@ -39,7 +39,7 @@ function MyApp({ Component, pageProps }) {
     try {
       localStorage.setItem('taskTrackerUser', JSON.stringify(userData));
       setCurrentUser(userData);
-      router.push('/dashboard'); 
+      router.push('/dashboard');
     } catch (error) {
       console.error("Failed to save user to local storage:", error);
       alert("Registration failed. Please try again or check your browser settings.");
@@ -50,9 +50,9 @@ function MyApp({ Component, pageProps }) {
   const handleSignOut = () => {
     try {
       localStorage.removeItem('taskTrackerUser');
-    
+
       setCurrentUser(null);
-      router.push('/'); 
+      router.push('/');
     } catch (error) {
       console.error("Failed to clear local storage on sign out:", error);
     }
@@ -60,11 +60,11 @@ function MyApp({ Component, pageProps }) {
 
 
   const addTask = (newTask) => {
-    const taskId = Date.now().toString(); 
+    const taskId = Date.now().toString();
     setTasks(prevTasks => [...prevTasks, { id: taskId, ...newTask }]);
   };
 
-  
+
   const updateTask = (updatedTask) => {
     setTasks(prevTasks =>
       prevTasks.map(task => (task.id === updatedTask.id ? updatedTask : task))
@@ -89,13 +89,13 @@ function MyApp({ Component, pageProps }) {
   return (
     <AppContext.Provider value={contextValue}>
       <div className="min-h-screen bg-gray-900 text-white font-inter">
-        
+
         <Script src="https://cdn.tailwindcss.com" strategy="beforeInteractive" />
         <style>{`
           @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
           body { font-family: 'Inter', sans-serif; }
         `}</style>
-        <Component {...pageProps} /> 
+        <Component {...pageProps} />
       </div>
     </AppContext.Provider>
   );

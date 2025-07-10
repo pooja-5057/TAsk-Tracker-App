@@ -74,6 +74,7 @@ const TaskFormModal = ({ onClose, onAddTask, onUpdateTask, taskToEdit }) => {
               placeholder="e.g. Watch a video about Next.js Auth"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
+               required
             ></textarea>
           </div>
 
