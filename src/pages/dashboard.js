@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext,useSelector } from 'react';
 import { useRouter } from 'next/router';
 import { AppContext } from './_app';
 import DashboardLayout from '../components/layout/DashboardLayout';
@@ -65,6 +65,7 @@ const DashboardPage = () => {
     >
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-bold text-white">All Tasks</h1>
+      
         <button
           onClick={handleCreateNewTask}
           className=" w-10 h-10 bg-gray-700 hover:bg-gray-600 rounded-full
