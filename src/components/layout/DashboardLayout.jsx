@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import NavItem from './NavItem';
 import UserProfilePopup from './UserProfilePopup';
 
-const DashboardLayout = ({ currentUser, onSignOut, activeTab, setActiveTab, onManageAccountClick, children }) => { // <--- onManageAccountClick प्रॉप प्राप्त करें (Receive onManageAccountClick prop)
+const DashboardLayout = ({ currentUser, onSignOut, activeTab, setActiveTab, onManageAccountClick, children }) => { 
   const [showUserProfilePopup, setShowUserProfilePopup] = useState(false);
 
   return (
@@ -26,7 +26,7 @@ const DashboardLayout = ({ currentUser, onSignOut, activeTab, setActiveTab, onMa
               <UserProfilePopup
                 currentUser={currentUser}
                 onSignOut={onSignOut}
-                onManageAccountClick={onManageAccountClick} // <--- इसे UserProfilePopup को पास करें (Pass this to UserProfilePopup)
+                onManageAccountClick={onManageAccountClick} 
               />
             )}
           </div>
