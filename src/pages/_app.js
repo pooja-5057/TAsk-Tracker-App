@@ -1,6 +1,7 @@
 import '../styles/globals.css';
 import React, { useState, useEffect, createContext } from 'react';
 import { useRouter } from 'next/router';
+import Script from 'next/script';
 
 export const AppContext = createContext(null);
 
@@ -89,7 +90,7 @@ function MyApp({ Component, pageProps }) {
     <AppContext.Provider value={contextValue}>
       <div className="min-h-screen bg-gray-900 text-white font-inter">
         
-        <script src="https://cdn.tailwindcss.com"></script>
+        <Script src="https://cdn.tailwindcss.com" strategy="beforeInteractive" />
         <style>{`
           @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
           body { font-family: 'Inter', sans-serif; }
